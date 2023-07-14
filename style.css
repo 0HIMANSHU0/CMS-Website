@@ -1,0 +1,22 @@
+* {
+ margin: 0px;
+ padding: 0px;
+ font-family: 'Poppins', 'sans-sreif';
+ box-sizing: border-box;
+}
+
+
+@media only screen and  (max-width: 576px) {
+ body{
+  background: rgb(249, 152, 24)!important
+ }
+nav a .navbar-brand .text-success {
+ font-size: 17px;
+}
+div#users.row.container-fluid.d-flex.justify-content-center{
+ width: auto;
+}
+div.card.container.form-control.about{
+ font-size: 15px;
+}
+}
