@@ -67,7 +67,9 @@ function showUsers() {
      }"></img>
      </div>
      <div class="text-center m-3">
-     <button id="${index}" onclick="deleteNotes(this.id)" class="btn btn-success">Delete User</button>
+     <button id="${index}" onclick="deleteNotes(this.id)" class="btn btn-success" style="font-size: 15px;
+     border: 2px solid black;
+ " >Delete User</button>
      </div>
     </div>
    </div>`;
