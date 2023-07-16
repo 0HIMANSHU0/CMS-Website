@@ -6,7 +6,7 @@ showUsers();
 let addBtn = document.getElementById("addbtn");
 addBtn.addEventListener("click", function (e) {
   let addName = document.getElementById("addName");
-  let addAddress = document.getElementById("addAddress");
+  let addContent = document.getElementById("addContent");
   let addEmail = document.getElementById("addEmail");
   let addOccupation = document.getElementById("addOccupation");
   var fileInput = document.getElementById("image");
@@ -25,7 +25,7 @@ addBtn.addEventListener("click", function (e) {
     Name: addName.value,
     Email: addEmail.value,
     Occupation: addOccupation.value,
-    Address: addAddress.value,
+    Content: addContent.value,
     Image: image.src,
   };
   // console.log(myObj);
@@ -35,8 +35,8 @@ addBtn.addEventListener("click", function (e) {
   addName.value = "";
   addEmail.value = "";
   addOccupation.value = "";
-  addAddress.value = "";
-  image.value = "";
+  addContent.value = "";
+  fileInput.value = "";
 
   console.log(usersObj);
   showUsers();
@@ -59,7 +59,7 @@ function showUsers() {
      <h5 class="card-title m-1">Name: ${element.Name}</h5>
      <p class="card-text m-1">Email: ${element.Email}</p>
      <p class="card-text m-1">Occupation: ${element.Occupation}</p>
-     <p class="card-text m-1">Address: ${element.Address}</p>
+     <p class="card-text m-1">Content: ${element.Content}</p>
      <div class="text-center m-3">
      <p class="card-text m-1">Image:</p>
      <img class="card-text m-1" style="height: 165px; border: 2px solid #198754; border-radius: 6px;" src="${
@@ -78,7 +78,7 @@ function showUsers() {
   if (usersObj.length != 0) {
     usersElm.innerHTML = html;
   } else {
-    usersElm.innerHTML = `Nothing to show here! Use the "Add Users" section above to Add Users.`;
+    usersElm.innerHTML = `Nothing to show here! Use the "Add Blog" section above to Add blog.`;
   }
 }
 
@@ -105,12 +105,12 @@ search.addEventListener("input", function () {
   Array.from(noteCards).forEach(function (element) {
     let cardText = element.getElementsByTagName("p")[0].innerText;
     let cardTitle = element.getElementsByTagName("h5")[0].innerText;
-    let cardAddress = element.getElementsByTagName("p")[2].innerText;
+    let cardContent = element.getElementsByTagName("p")[2].innerText;
     console.log(cardText);
     if (
       cardText.includes(inputVal) ||
       cardTitle.includes(inputVal) ||
-      cardAddress.includes(inputVal)
+      cardContent.includes(inputVal)
     ) {
       element.style.display = "block";
     } else {
